@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+prophet
+python-multipart
+
+flake8
+pytest
+httpx
