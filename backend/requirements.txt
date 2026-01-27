@@ -3,6 +3,8 @@ uvicorn
 pandas
 prophet
 python-multipart
+scikit-learn
+numpy
 
 flake8
 pytest

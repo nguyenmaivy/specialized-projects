@@ -307,11 +307,11 @@ interface KpiCardProps {
 
 function KpiCard({ title, value, icon: Icon, color }: KpiCardProps) {
     return (
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4">
+        <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center gap-4 min-w-[300px]">
             <div className={`p-3 rounded-full ${color}`}>
                 <Icon className="w-6 h-6" />
             </div>
-            <div>
+            <div className="flex-1 min-w-0">
                 <p className="text-sm text-gray-500 font-medium">{title}</p>
                 <h4 className="text-2xl font-bold text-gray-900">{value}</h4>
             </div>

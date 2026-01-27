@@ -46,6 +46,33 @@ export interface ForecastItem {
     yhat_upper: number;
 }
 
+export interface CustomerSegment {
+    segment: string;
+    customer_count: number;
+    avg_recency: number;
+    avg_frequency: number;
+    avg_monetary: number;
+}
+
+export interface CustomerData {
+    "Customer ID": string;
+    "Customer Name": string;
+    Recency: number;
+    Frequency: number;
+    Monetary: number;
+    Segment: string;
+}
+
+export interface SegmentationResponse {
+    segments: CustomerSegment[];
+    customers: CustomerData[];
+}
+
+export interface HeatmapData {
+    day: string;
+    value: number;
+}
+
 export const fetchFilters = async (): Promise<FilterOptions> => {
     const response = await axios.get<FilterOptions>(`${API_BASE_URL}/filters`);
     return response.data;
@@ -73,5 +100,15 @@ export const fetchRegionSales = async (filters: Filters): Promise<RegionSaleItem
 
 export const fetchForecast = async (filters: Filters): Promise<ForecastItem[]> => {
     const response = await axios.get<ForecastItem[]>(`${API_BASE_URL}/forecast`, { params: filters });
+    return response.data;
+};
+
+export const fetchCustomerSegmentation = async (filters: Omit<Filters, 'start_date' | 'end_date'>): Promise<SegmentationResponse> => {
+    const response = await axios.get<SegmentationResponse>(`${API_BASE_URL}/customer-segmentation`, { params: filters });
+    return response.data;
+};
+
+export const fetchSalesHeatmap = async (filters: Filters): Promise<HeatmapData[]> => {
+    const response = await axios.get<HeatmapData[]>(`${API_BASE_URL}/sales-heatmap`, { params: filters });
     return response.data;
 };
