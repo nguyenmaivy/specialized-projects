@@ -11,15 +11,17 @@ import {
     Tooltip,
     Legend,
     ArcElement,
-    BarElement
+    BarElement,
+    Filler
 } from 'chart.js';
 import { Line, Bar, Pie } from 'react-chartjs-2';
 import * as api from '@/lib/api';
 import { Filter, DollarSign, ShoppingCart, Percent, TrendingUp, Calendar, MapPin, Tag, LucideIcon } from 'lucide-react';
+import CalendarHeatmap from './CalendarHeatmap';
 
 
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement, BarElement);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement, BarElement, Filler);
 
 export default function Dashboard() {
     const [loading, setLoading] = useState(true);
@@ -37,6 +39,7 @@ export default function Dashboard() {
     const [catSales, setCatSales] = useState<api.CategorySaleItem[]>([]);
     const [regionSales, setRegionSales] = useState<api.RegionSaleItem[]>([]);
     const [forecast, setForecast] = useState<api.ForecastItem[]>([]);
+    const [heatmapData, setHeatmapData] = useState<api.HeatmapData[]>([]);
 
     // Load Filters Options
     useEffect(() => {
@@ -65,13 +68,15 @@ export default function Dashboard() {
             api.fetchSalesTrend(params),
             api.fetchCategorySales(params),
             api.fetchRegionSales(params),
-            api.fetchForecast(params)
-        ]).then(([kpiData, trendData, catData, regionData, forecastData]) => {
+            api.fetchForecast(params),
+            api.fetchSalesHeatmap(params)
+        ]).then(([kpiData, trendData, catData, regionData, forecastData, heatmapDataResult]) => {
             setKpis(kpiData);
             setSalesTrend(trendData);
             setCatSales(catData);
             setRegionSales(regionData);
             setForecast(Array.isArray(forecastData) ? forecastData : []);
+            setHeatmapData(heatmapDataResult);
             setLoading(false);
         }).catch(err => {
             console.error(err);
@@ -292,6 +297,9 @@ export default function Dashboard() {
                         )}
                     </div>
                 </div>
+
+                {/* Sales Heatmap */}
+                <CalendarHeatmap data={heatmapData} />
 
             </div>
         </div>

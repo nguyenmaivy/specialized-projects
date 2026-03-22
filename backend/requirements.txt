@@ -6,6 +6,18 @@ python-multipart
 scikit-learn
 numpy
 
+# Authentication
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt==4.0.1
+
+# Rate Limiting
+slowapi
+
+# Configuration
+python-dotenv
+
+# Testing
 flake8
 pytest
 httpx

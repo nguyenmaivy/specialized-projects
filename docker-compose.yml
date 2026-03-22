@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # ─── Backend API ───────────────────────────────────────────────────────
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ALLOWED_ORIGINS=http://localhost:3000,http://frontend:3000
+      - AUTH_REQUIRED=false
+      - SECRET_KEY=change-this-in-production
+      - TOKEN_EXPIRE_MINUTES=60
+      - RATE_LIMIT=100/minute
+    volumes:
+      - ./data:/app/../data:ro             # Mount data directory
+      - backend-logs:/app/logs             # Persist logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ─── Frontend (Next.js) ────────────────────────────────────────────────
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # ─── MongoDB (Optional - for Phase 1) ─────────────────────────────────
+  # Uncomment when ready to migrate from CSV to MongoDB
+  # mongo:
+  #   image: mongo:7
+  #   ports:
+  #     - "27017:27017"
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: admin
+  #     MONGO_INITDB_ROOT_PASSWORD: password123
+  #   volumes:
+  #     - mongo-data:/data/db
+  #   restart: unless-stopped
+
+  # ─── Redis (Optional - for Phase 4) ───────────────────────────────────
+  # Uncomment when ready to add Redis caching
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped
+
+volumes:
+  backend-logs:
+  # mongo-data:

@@ -70,7 +70,7 @@ export default function CustomersPage() {
                 acc[customer.Segment].push({
                     x: customer.Recency,
                     y: customer.Monetary,
-                    r: Math.max(customer.Frequency * 2, 5) // Bubble radius based on frequency
+                    r: Math.min(Math.max(customer.Frequency * 2, 3), 30) // Bubble radius based on frequency, capped
                 });
                 return acc;
             }, {} as Record<string, Array<{ x: number; y: number; r: number }>>)
@@ -169,7 +169,8 @@ export default function CustomersPage() {
                         <h3 className="text-lg font-semibold text-gray-800">RFM Analysis: Recency vs Monetary Value</h3>
                         <span className="text-xs text-gray-500 ml-auto">(Bubble size = Purchase Frequency)</span>
                     </div>
-                    <div className="h-96">
+                    <div className="h-[500px]">  {/* thay cho h-96 */}
+
                         <Bubble
                             data={bubbleData}
                             options={{
