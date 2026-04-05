@@ -35,7 +35,7 @@ services:
       - POSTGRES_DB=sales_dashboard
       - POSTGRES_USER=sales_user
       - POSTGRES_PASSWORD=123456
-      - OPENROUTER_API_KEY=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
+      - OPENROUTER_API_KEY=sk-or-....
       - OPENROUTER_MODEL=nvidia/nemotron-3-super-120b-a12b:free
     volumes:
       - ./data:/app/../data:ro             # Mount data directory
