@@ -1,0 +1,316 @@
+2026-04-05 14:27:42,850 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:42,850 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:42,883 - main - INFO - GET /api/filters - Status: 401 - Time: 32.96ms - IP: 127.0.0.1
+2026-04-05 14:27:42,891 - main - INFO - GET /api/filters - Status: 401 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,015 - main - INFO - OPTIONS /auth/login - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,227 - main - INFO - ✅ User logged in: admin
+2026-04-05 14:27:45,241 - main - INFO - POST /auth/login - Status: 200 - Time: 225.78ms - IP: 127.0.0.1
+2026-04-05 14:27:45,241 - main - INFO - OPTIONS /auth/me - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,241 - main - INFO - GET /auth/me - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,324 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 14:27:45,324 - main - INFO - GET /api/filters - Status: 200 - Time: 65.25ms - IP: 127.0.0.1
+2026-04-05 14:27:45,324 - main - INFO - GET /api/filters - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,389 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 1.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,391 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 0.65ms - IP: 127.0.0.1
+2026-04-05 14:27:45,391 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 1.66ms - IP: 127.0.0.1
+2026-04-05 14:27:45,393 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 1.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,393 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 0.56ms - IP: 127.0.0.1
+2026-04-05 14:27:45,393 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 0.56ms - IP: 127.0.0.1
+2026-04-05 14:27:45,393 - main - ERROR - Error in get_kpis: module 'datetime' has no attribute 'strptime'
+2026-04-05 14:27:45,393 - main - ERROR - Error in get_category_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 14:27:45,393 - main - ERROR - Error in get_sales_trend: module 'datetime' has no attribute 'strptime'
+2026-04-05 14:27:45,393 - main - INFO - GET /api/kpis - Status: 500 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,393 - main - INFO - GET /api/charts/category-sales - Status: 500 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 14:27:45,407 - main - INFO - GET /api/charts/sales-trend - Status: 500 - Time: 13.64ms - IP: 127.0.0.1
+2026-04-05 14:27:45,414 - main - ERROR - Error in get_region_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 14:27:45,416 - main - ERROR - Error in get_sales_heatmap: module 'datetime' has no attribute 'strptime'
+2026-04-05 14:27:45,419 - main - INFO - GET /api/charts/region-sales - Status: 500 - Time: 12.35ms - IP: 127.0.0.1
+2026-04-05 14:27:45,426 - main - INFO - GET /api/sales-heatmap - Status: 500 - Time: 12.62ms - IP: 127.0.0.1
+2026-04-05 14:27:46,503 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 14:27:46,503 - main - INFO - GET /api/forecast - Status: 200 - Time: 1093.36ms - IP: 127.0.0.1
+2026-04-05 15:00:27,379 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 4.88ms - IP: 127.0.0.1
+2026-04-05 15:00:27,379 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 4.88ms - IP: 127.0.0.1
+2026-04-05 15:00:27,431 - main - INFO - GET /api/filters - Status: 200 - Time: 52.23ms - IP: 127.0.0.1
+2026-04-05 15:00:27,441 - main - INFO - GET /api/filters - Status: 200 - Time: 10.63ms - IP: 127.0.0.1
+2026-04-05 15:00:27,479 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 1.45ms - IP: 127.0.0.1
+2026-04-05 15:00:27,480 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 0.33ms - IP: 127.0.0.1
+2026-04-05 15:00:27,482 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 1.43ms - IP: 127.0.0.1
+2026-04-05 15:00:27,483 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 0.44ms - IP: 127.0.0.1
+2026-04-05 15:00:27,483 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 15:00:27,483 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 15:00:27,493 - main - ERROR - Error in get_sales_trend: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:00:27,493 - main - ERROR - Error in get_kpis: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:00:27,493 - main - INFO - GET /api/charts/sales-trend - Status: 500 - Time: 2.86ms - IP: 127.0.0.1
+2026-04-05 15:00:27,493 - main - INFO - GET /api/kpis - Status: 500 - Time: 10.12ms - IP: 127.0.0.1
+2026-04-05 15:00:27,493 - main - ERROR - Error in get_category_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:00:27,503 - main - ERROR - Error in get_region_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:00:27,503 - main - INFO - GET /api/charts/category-sales - Status: 500 - Time: 10.17ms - IP: 127.0.0.1
+2026-04-05 15:00:27,503 - main - INFO - GET /api/charts/region-sales - Status: 500 - Time: 10.17ms - IP: 127.0.0.1
+2026-04-05 15:00:27,514 - main - ERROR - Error in get_sales_heatmap: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:00:27,525 - main - INFO - GET /api/sales-heatmap - Status: 500 - Time: 17.11ms - IP: 127.0.0.1
+2026-04-05 15:00:28,404 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 15:00:28,408 - main - INFO - GET /api/forecast - Status: 200 - Time: 902.58ms - IP: 127.0.0.1
+2026-04-05 15:02:27,168 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 15:02:27,172 - main - INFO - GET /api/filters - Status: 200 - Time: 66.04ms - IP: 127.0.0.1
+2026-04-05 15:02:27,176 - main - INFO - GET /api/filters - Status: 200 - Time: 2.16ms - IP: 127.0.0.1
+2026-04-05 15:02:27,202 - main - ERROR - Error in get_kpis: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:02:27,204 - main - INFO - GET /api/kpis - Status: 500 - Time: 3.28ms - IP: 127.0.0.1
+2026-04-05 15:02:27,209 - main - ERROR - Error in get_sales_trend: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:02:27,210 - main - INFO - GET /api/charts/sales-trend - Status: 500 - Time: 3.51ms - IP: 127.0.0.1
+2026-04-05 15:02:27,214 - main - ERROR - Error in get_category_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:02:27,214 - main - INFO - GET /api/charts/category-sales - Status: 500 - Time: 1.03ms - IP: 127.0.0.1
+2026-04-05 15:02:27,220 - main - ERROR - Error in get_region_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:02:27,220 - main - INFO - GET /api/charts/region-sales - Status: 500 - Time: 5.77ms - IP: 127.0.0.1
+2026-04-05 15:02:27,402 - main - ERROR - Error in get_sales_heatmap: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:02:27,407 - main - INFO - GET /api/sales-heatmap - Status: 500 - Time: 18.51ms - IP: 127.0.0.1
+2026-04-05 15:02:27,661 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 15:02:27,667 - main - INFO - GET /api/forecast - Status: 200 - Time: 445.19ms - IP: 127.0.0.1
+2026-04-05 15:02:46,421 - main - ERROR - Health check failed: module 'datetime' has no attribute 'now'
+2026-04-05 15:09:01,471 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 15:09:01,473 - main - INFO - GET /api/filters - Status: 200 - Time: 86.52ms - IP: 127.0.0.1
+2026-04-05 15:09:01,479 - main - INFO - GET /api/filters - Status: 200 - Time: 4.04ms - IP: 127.0.0.1
+2026-04-05 15:09:01,549 - main - ERROR - Error in get_kpis: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:09:01,550 - main - INFO - GET /api/kpis - Status: 500 - Time: 4.49ms - IP: 127.0.0.1
+2026-04-05 15:09:01,554 - main - ERROR - Error in get_sales_trend: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:09:01,555 - main - INFO - GET /api/charts/sales-trend - Status: 500 - Time: 3.0ms - IP: 127.0.0.1
+2026-04-05 15:09:01,558 - main - ERROR - Error in get_category_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:09:01,559 - main - INFO - GET /api/charts/category-sales - Status: 500 - Time: 2.61ms - IP: 127.0.0.1
+2026-04-05 15:09:01,563 - main - ERROR - Error in get_region_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:09:01,564 - main - INFO - GET /api/charts/region-sales - Status: 500 - Time: 3.23ms - IP: 127.0.0.1
+2026-04-05 15:09:01,639 - main - ERROR - Error in get_sales_heatmap: module 'datetime' has no attribute 'strptime'
+2026-04-05 15:09:01,640 - main - INFO - GET /api/sales-heatmap - Status: 500 - Time: 7.56ms - IP: 127.0.0.1
+2026-04-05 15:09:02,075 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 15:09:02,078 - main - INFO - GET /api/forecast - Status: 200 - Time: 510.61ms - IP: 127.0.0.1
+2026-04-05 17:35:37,847 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 17:35:37,849 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 2.1ms - IP: 127.0.0.1
+2026-04-05 17:35:37,849 - main - INFO - GET /api/filters - Status: 401 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 17:35:37,849 - main - INFO - GET /api/filters - Status: 401 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 17:35:39,549 - main - INFO - OPTIONS /auth/login - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 17:35:39,747 - main - INFO - ✅ User logged in: admin
+2026-04-05 17:35:39,756 - main - INFO - POST /auth/login - Status: 200 - Time: 205.78ms - IP: 127.0.0.1
+2026-04-05 17:35:39,763 - main - INFO - OPTIONS /auth/me - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 17:35:39,767 - main - INFO - GET /auth/me - Status: 200 - Time: 4.48ms - IP: 127.0.0.1
+2026-04-05 17:35:39,777 - main - INFO - GET /api/filters - Status: 200 - Time: 1.72ms - IP: 127.0.0.1
+2026-04-05 17:35:39,781 - main - INFO - GET /api/filters - Status: 200 - Time: 2.16ms - IP: 127.0.0.1
+2026-04-05 17:35:39,822 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 1.02ms - IP: 127.0.0.1
+2026-04-05 17:35:39,824 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 1.9ms - IP: 127.0.0.1
+2026-04-05 17:35:39,825 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 3.36ms - IP: 127.0.0.1
+2026-04-05 17:35:39,825 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 17:35:39,825 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 17:35:39,829 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 3.5ms - IP: 127.0.0.1
+2026-04-05 17:35:39,834 - main - ERROR - Error in get_sales_trend: module 'datetime' has no attribute 'strptime'
+2026-04-05 17:35:39,834 - main - ERROR - Error in get_kpis: module 'datetime' has no attribute 'strptime'
+2026-04-05 17:35:39,836 - main - INFO - GET /api/charts/sales-trend - Status: 500 - Time: 2.02ms - IP: 127.0.0.1
+2026-04-05 17:35:39,836 - main - ERROR - Error in get_category_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 17:35:39,837 - main - INFO - GET /api/kpis - Status: 500 - Time: 8.59ms - IP: 127.0.0.1
+2026-04-05 17:35:39,838 - main - INFO - GET /api/charts/category-sales - Status: 500 - Time: 6.13ms - IP: 127.0.0.1
+2026-04-05 17:35:39,843 - main - ERROR - Error in get_region_sales: module 'datetime' has no attribute 'strptime'
+2026-04-05 17:35:39,844 - main - ERROR - Error in get_sales_heatmap: module 'datetime' has no attribute 'strptime'
+2026-04-05 17:35:39,847 - main - INFO - GET /api/charts/region-sales - Status: 500 - Time: 7.05ms - IP: 127.0.0.1
+2026-04-05 17:35:39,849 - main - INFO - GET /api/sales-heatmap - Status: 500 - Time: 6.46ms - IP: 127.0.0.1
+2026-04-05 17:35:40,257 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 17:35:40,258 - main - INFO - GET /api/forecast - Status: 200 - Time: 417.62ms - IP: 127.0.0.1
+2026-04-05 19:34:23,088 - main - INFO - OPTIONS /auth/login - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:34:23,102 - main - WARNING - ❌ Failed login attempt for user: adminadmin
+2026-04-05 19:34:23,102 - main - INFO - POST /auth/login - Status: 401 - Time: 11.77ms - IP: 127.0.0.1
+2026-04-05 19:34:44,376 - main - INFO - ✅ User logged in: admin
+2026-04-05 19:34:44,377 - main - INFO - POST /auth/login - Status: 200 - Time: 213.6ms - IP: 127.0.0.1
+2026-04-05 19:34:44,420 - main - INFO - OPTIONS /auth/me - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:34:44,426 - main - INFO - GET /auth/me - Status: 200 - Time: 2.25ms - IP: 127.0.0.1
+2026-04-05 19:34:44,445 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 0.56ms - IP: 127.0.0.1
+2026-04-05 19:34:44,446 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 1.11ms - IP: 127.0.0.1
+2026-04-05 19:34:44,490 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 19:34:44,493 - main - INFO - GET /api/filters - Status: 200 - Time: 44.81ms - IP: 127.0.0.1
+2026-04-05 19:34:44,500 - main - INFO - GET /api/filters - Status: 200 - Time: 3.18ms - IP: 127.0.0.1
+2026-04-05 19:34:44,630 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 1.51ms - IP: 127.0.0.1
+2026-04-05 19:34:44,633 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 3.01ms - IP: 127.0.0.1
+2026-04-05 19:34:44,636 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:34:44,638 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 1.93ms - IP: 127.0.0.1
+2026-04-05 19:34:44,640 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:34:44,642 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 1.0ms - IP: 127.0.0.1
+2026-04-05 19:34:44,667 - main - INFO - GET /api/kpis - Status: 200 - Time: 24.08ms - IP: 127.0.0.1
+2026-04-05 19:34:44,684 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 38.4ms - IP: 127.0.0.1
+2026-04-05 19:34:44,699 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 16.56ms - IP: 127.0.0.1
+2026-04-05 19:34:44,701 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 12.98ms - IP: 127.0.0.1
+2026-04-05 19:34:44,709 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-05 19:34:44,728 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 22.46ms - IP: 127.0.0.1
+2026-04-05 19:34:45,127 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 19:34:45,130 - main - INFO - GET /api/forecast - Status: 200 - Time: 427.39ms - IP: 127.0.0.1
+2026-04-05 19:35:42,835 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 2.53ms - IP: 127.0.0.1
+2026-04-05 19:35:42,837 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 3.14ms - IP: 127.0.0.1
+2026-04-05 19:35:42,838 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 3.79ms - IP: 127.0.0.1
+2026-04-05 19:35:42,838 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 3.27ms - IP: 127.0.0.1
+2026-04-05 19:35:42,848 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 3.8ms - IP: 127.0.0.1
+2026-04-05 19:35:42,852 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 6.9ms - IP: 127.0.0.1
+2026-04-05 19:35:42,882 - main - INFO - GET /api/kpis - Status: 200 - Time: 37.33ms - IP: 127.0.0.1
+2026-04-05 19:35:42,893 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 35.17ms - IP: 127.0.0.1
+2026-04-05 19:35:42,926 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 79.15ms - IP: 127.0.0.1
+2026-04-05 19:35:42,933 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 73.65ms - IP: 127.0.0.1
+2026-04-05 19:35:42,954 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-05 19:35:42,972 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 33.81ms - IP: 127.0.0.1
+2026-04-05 19:35:43,835 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 19:35:43,840 - main - INFO - GET /api/forecast - Status: 200 - Time: 946.89ms - IP: 127.0.0.1
+2026-04-05 19:53:52,502 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 1.19ms - IP: 127.0.0.1
+2026-04-05 19:53:52,503 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 2.29ms - IP: 127.0.0.1
+2026-04-05 19:53:52,504 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 2.79ms - IP: 127.0.0.1
+2026-04-05 19:53:52,504 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 3.34ms - IP: 127.0.0.1
+2026-04-05 19:53:52,505 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 3.17ms - IP: 127.0.0.1
+2026-04-05 19:53:52,506 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 4.26ms - IP: 127.0.0.1
+2026-04-05 19:53:52,529 - main - INFO - GET /api/kpis - Status: 200 - Time: 21.45ms - IP: 127.0.0.1
+2026-04-05 19:53:52,540 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 30.9ms - IP: 127.0.0.1
+2026-04-05 19:53:52,541 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-05 19:53:52,569 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 59.31ms - IP: 127.0.0.1
+2026-04-05 19:53:52,570 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 60.87ms - IP: 127.0.0.1
+2026-04-05 19:53:52,571 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 61.95ms - IP: 127.0.0.1
+2026-04-05 19:53:53,537 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 19:53:53,539 - main - INFO - GET /api/forecast - Status: 200 - Time: 1029.73ms - IP: 127.0.0.1
+2026-04-05 19:53:59,248 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:53:59,249 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 1.53ms - IP: 127.0.0.1
+2026-04-05 19:54:03,299 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 19:54:03,315 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 4064.86ms - IP: 127.0.0.1
+2026-04-05 19:54:03,571 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 19:54:03,583 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 266.41ms - IP: 127.0.0.1
+2026-04-05 19:57:19,459 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 19:57:21,644 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 19:57:21,660 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 2260.18ms - IP: 127.0.0.1
+2026-04-05 19:57:30,156 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 0.71ms - IP: 127.0.0.1
+2026-04-05 19:57:30,157 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 1.05ms - IP: 127.0.0.1
+2026-04-05 19:57:30,158 - main - INFO - GET /api/filters - Status: 401 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:57:30,162 - main - INFO - GET /api/filters - Status: 401 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:57:31,819 - main - INFO - OPTIONS /auth/login - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:57:32,031 - main - INFO - ✅ User logged in: admin
+2026-04-05 19:57:32,034 - main - INFO - POST /auth/login - Status: 200 - Time: 212.36ms - IP: 127.0.0.1
+2026-04-05 19:57:32,038 - main - INFO - OPTIONS /auth/me - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:57:32,042 - main - INFO - GET /auth/me - Status: 200 - Time: 3.1ms - IP: 127.0.0.1
+2026-04-05 19:57:32,051 - main - INFO - GET /api/filters - Status: 200 - Time: 1.01ms - IP: 127.0.0.1
+2026-04-05 19:57:32,057 - main - INFO - GET /api/filters - Status: 200 - Time: 2.13ms - IP: 127.0.0.1
+2026-04-05 19:57:32,097 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 1.02ms - IP: 127.0.0.1
+2026-04-05 19:57:32,099 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 2.78ms - IP: 127.0.0.1
+2026-04-05 19:57:32,100 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 2.97ms - IP: 127.0.0.1
+2026-04-05 19:57:32,101 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 2.66ms - IP: 127.0.0.1
+2026-04-05 19:57:32,104 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 1.01ms - IP: 127.0.0.1
+2026-04-05 19:57:32,107 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 4.45ms - IP: 127.0.0.1
+2026-04-05 19:57:32,157 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 50.47ms - IP: 127.0.0.1
+2026-04-05 19:57:32,160 - main - INFO - GET /api/kpis - Status: 200 - Time: 56.47ms - IP: 127.0.0.1
+2026-04-05 19:57:32,162 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 47.66ms - IP: 127.0.0.1
+2026-04-05 19:57:32,163 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 35.25ms - IP: 127.0.0.1
+2026-04-05 19:57:32,178 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-05 19:57:32,186 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 18.21ms - IP: 127.0.0.1
+2026-04-05 19:57:32,559 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 19:57:32,562 - main - INFO - GET /api/forecast - Status: 200 - Time: 398.55ms - IP: 127.0.0.1
+2026-04-05 19:58:19,757 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 1.12ms - IP: 127.0.0.1
+2026-04-05 19:58:19,757 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 1.12ms - IP: 127.0.0.1
+2026-04-05 19:58:19,759 - main - INFO - GET /api/filters - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:58:19,759 - main - INFO - GET /api/filters - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 19:58:19,829 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 20.88ms - IP: 127.0.0.1
+2026-04-05 19:58:19,830 - main - INFO - GET /api/kpis - Status: 200 - Time: 23.44ms - IP: 127.0.0.1
+2026-04-05 19:58:19,842 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 10.33ms - IP: 127.0.0.1
+2026-04-05 19:58:19,842 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 12.24ms - IP: 127.0.0.1
+2026-04-05 19:58:19,855 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-05 19:58:19,867 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 21.2ms - IP: 127.0.0.1
+2026-04-05 19:58:20,172 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 19:58:20,174 - main - INFO - GET /api/forecast - Status: 200 - Time: 332.52ms - IP: 127.0.0.1
+2026-04-05 19:58:21,898 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 19:58:21,907 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 236.05ms - IP: 127.0.0.1
+2026-04-05 19:58:22,222 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 19:58:22,240 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 330.19ms - IP: 127.0.0.1
+2026-04-05 19:59:04,834 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 19:59:04,836 - main - INFO - GET /api/filters - Status: 200 - Time: 45.17ms - IP: 127.0.0.1
+2026-04-05 19:59:04,839 - main - INFO - GET /api/filters - Status: 200 - Time: 2.48ms - IP: 127.0.0.1
+2026-04-05 19:59:04,879 - main - INFO - GET /api/kpis - Status: 200 - Time: 10.17ms - IP: 127.0.0.1
+2026-04-05 19:59:04,904 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 24.29ms - IP: 127.0.0.1
+2026-04-05 19:59:04,916 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 9.26ms - IP: 127.0.0.1
+2026-04-05 19:59:04,927 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 9.32ms - IP: 127.0.0.1
+2026-04-05 19:59:05,079 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-05 19:59:05,092 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 35.06ms - IP: 127.0.0.1
+2026-04-05 19:59:05,305 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 19:59:05,307 - main - INFO - GET /api/forecast - Status: 200 - Time: 377.93ms - IP: 127.0.0.1
+2026-04-05 19:59:09,373 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 19:59:09,386 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 2288.82ms - IP: 127.0.0.1
+2026-04-05 19:59:09,644 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 19:59:09,656 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 264.49ms - IP: 127.0.0.1
+2026-04-05 20:02:37,033 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 20:02:39,152 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:02:39,161 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 2181.5ms - IP: 127.0.0.1
+2026-04-05 20:04:00,354 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 20:04:02,001 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:04:02,011 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 1702.22ms - IP: 127.0.0.1
+2026-04-05 20:05:05,847 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:05:05,913 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 20:05:07,623 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:05:07,638 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 1786.78ms - IP: 127.0.0.1
+2026-04-05 20:05:29,783 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 20:05:31,472 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:05:31,487 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 1751.8ms - IP: 127.0.0.1
+2026-04-05 20:08:13,478 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 20:08:13,481 - main - INFO - GET /api/filters - Status: 200 - Time: 53.29ms - IP: 127.0.0.1
+2026-04-05 20:08:13,485 - main - INFO - GET /api/filters - Status: 200 - Time: 2.43ms - IP: 127.0.0.1
+2026-04-05 20:08:13,599 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:08:13,601 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:08:13,605 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:08:13,607 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:08:13,618 - main - INFO - GET /api/kpis - Status: 200 - Time: 8.85ms - IP: 127.0.0.1
+2026-04-05 20:08:13,620 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:08:13,622 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:08:13,644 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 20.32ms - IP: 127.0.0.1
+2026-04-05 20:08:13,656 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 8.17ms - IP: 127.0.0.1
+2026-04-05 20:08:13,664 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 6.99ms - IP: 127.0.0.1
+2026-04-05 20:08:13,690 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-05 20:08:13,703 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 20.99ms - IP: 127.0.0.1
+2026-04-05 20:08:14,072 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 20:08:14,072 - main - INFO - GET /api/forecast - Status: 200 - Time: 404.83ms - IP: 127.0.0.1
+2026-04-05 20:08:25,689 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:08:25,704 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 2090.38ms - IP: 127.0.0.1
+2026-04-05 20:08:25,927 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:08:25,939 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 230.3ms - IP: 127.0.0.1
+2026-04-05 20:12:36,742 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:12:36,754 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 239.06ms - IP: 127.0.0.1
+2026-04-05 20:13:00,917 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:13:00,926 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 303.19ms - IP: 127.0.0.1
+2026-04-05 20:14:45,601 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 20:14:47,725 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:14:47,735 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 2176.08ms - IP: 127.0.0.1
+2026-04-05 20:36:21,074 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 0.98ms - IP: 127.0.0.1
+2026-04-05 20:36:21,075 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 1.52ms - IP: 127.0.0.1
+2026-04-05 20:36:21,088 - main - INFO - GET /api/filters - Status: 401 - Time: 11.27ms - IP: 127.0.0.1
+2026-04-05 20:36:21,091 - main - INFO - GET /api/filters - Status: 401 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:37:08,503 - main - INFO - OPTIONS /auth/login - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:37:08,508 - main - WARNING - ❌ Failed login attempt for user: adminadmin
+2026-04-05 20:37:08,509 - main - INFO - POST /auth/login - Status: 401 - Time: 3.47ms - IP: 127.0.0.1
+2026-04-05 20:37:19,866 - main - WARNING - ❌ Failed login attempt for user: adminadmin
+2026-04-05 20:37:19,866 - main - INFO - POST /auth/login - Status: 401 - Time: 2.16ms - IP: 127.0.0.1
+2026-04-05 20:37:31,105 - main - INFO - ✅ User logged in: admin
+2026-04-05 20:37:31,106 - main - INFO - POST /auth/login - Status: 200 - Time: 192.58ms - IP: 127.0.0.1
+2026-04-05 20:37:31,112 - main - INFO - OPTIONS /auth/me - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:37:31,115 - main - INFO - GET /auth/me - Status: 200 - Time: 2.01ms - IP: 127.0.0.1
+2026-04-05 20:37:31,172 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 20:37:31,175 - main - INFO - GET /api/filters - Status: 200 - Time: 44.93ms - IP: 127.0.0.1
+2026-04-05 20:37:31,179 - main - INFO - GET /api/filters - Status: 200 - Time: 2.0ms - IP: 127.0.0.1
+2026-04-05 20:37:31,260 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 1.08ms - IP: 127.0.0.1
+2026-04-05 20:37:31,261 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 1.0ms - IP: 127.0.0.1
+2026-04-05 20:37:31,263 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:37:31,264 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 0.71ms - IP: 127.0.0.1
+2026-04-05 20:37:31,266 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-05 20:37:31,282 - main - INFO - GET /api/kpis - Status: 200 - Time: 14.89ms - IP: 127.0.0.1
+2026-04-05 20:37:31,294 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 22.39ms - IP: 127.0.0.1
+2026-04-05 20:37:31,299 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 5.81ms - IP: 127.0.0.1
+2026-04-05 20:37:31,325 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 22.38ms - IP: 127.0.0.1
+2026-04-05 20:37:31,326 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 17.13ms - IP: 127.0.0.1
+2026-04-05 20:37:31,340 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-05 20:37:31,348 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 19.78ms - IP: 127.0.0.1
+2026-04-05 20:37:31,709 - main - INFO - ✅ Forecast generated successfully
+2026-04-05 20:37:31,709 - main - INFO - GET /api/forecast - Status: 200 - Time: 382.06ms - IP: 127.0.0.1
+2026-04-05 20:38:14,528 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 0.56ms - IP: 127.0.0.1
+2026-04-05 20:38:14,530 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 1.66ms - IP: 127.0.0.1
+2026-04-05 20:38:16,631 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:38:16,643 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 2111.83ms - IP: 127.0.0.1
+2026-04-05 20:38:16,901 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:38:16,914 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 266.92ms - IP: 127.0.0.1
+2026-04-05 20:39:56,745 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:39:56,756 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 243.76ms - IP: 127.0.0.1
+2026-04-05 20:42:31,773 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 20:42:34,525 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:42:34,549 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 2878.17ms - IP: 127.0.0.1
+2026-04-05 20:43:10,472 - main - INFO - ✅ Customer segmentation completed
+2026-04-05 20:43:10,501 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 885.94ms - IP: 127.0.0.1
+2026-04-05 20:46:12,865 - main - INFO - GET /api/customer-segmentation - Status: 401 - Time: 1.07ms - IP: 127.0.0.1

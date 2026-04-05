@@ -575,18 +575,21 @@ def get_customer_segmentation(
         })
         
         def assign_segment_label(cluster_id):
-            recency_rank = cluster_stats["Recency"].rank()[cluster_id]
-            frequency_rank = cluster_stats["Frequency"].rank()[cluster_id]
-            monetary_rank = cluster_stats["Monetary"].rank()[cluster_id]
-            
-            if frequency_rank >= 3 and monetary_rank >= 3:
-                return "Champions"
-            elif recency_rank >= 3:
+            # Với 4 cụm, ta có thể buộc mỗi cụm mang 1 nhãn riêng biệt dựa vào hành vi đặc trưng.
+            # Tìm cụm có Recency cao nhất (mua lâu nhất) -> At Risk
+            if cluster_id == cluster_stats["Recency"].idxmax():
                 return "At Risk"
-            elif frequency_rank <= 2 and monetary_rank <= 2:
-                return "New Customers"
+            # Tìm cụm có Monetary lớn nhất -> Champions
+            elif cluster_id == cluster_stats["Monetary"].idxmax():
+                return "Champions"
+            # Trong 2 cụm còn lại, cụm nào mua ít nhất -> New Customers
+            # Cụm cuối cùng -> Loyal
             else:
-                return "Loyal"
+                remaining_clusters = cluster_stats.drop([cluster_stats["Recency"].idxmax(), cluster_stats["Monetary"].idxmax()], errors='ignore')
+                if not remaining_clusters.empty and cluster_id == remaining_clusters["Frequency"].idxmin():
+                    return "New Customers"
+                else:
+                    return "Loyal"
         
         rfm["Segment"] = rfm["Cluster"].apply(assign_segment_label)
         
@@ -873,16 +876,16 @@ def _compute_analysis_bundle(filters: FiltersPayload):
             cluster_stats = rfm.groupby("Cluster").agg({"Recency": "mean", "Frequency": "mean", "Monetary": "mean"})
 
             def _segment_label(cluster_id):
-                recency_rank = cluster_stats["Recency"].rank()[cluster_id]
-                frequency_rank = cluster_stats["Frequency"].rank()[cluster_id]
-                monetary_rank = cluster_stats["Monetary"].rank()[cluster_id]
-                if frequency_rank >= 3 and monetary_rank >= 3:
-                    return "Champions"
-                if recency_rank >= 3:
+                if cluster_id == cluster_stats["Recency"].idxmax():
                     return "At Risk"
-                if frequency_rank <= 2 and monetary_rank <= 2:
-                    return "New Customers"
-                return "Loyal"
+                elif cluster_id == cluster_stats["Monetary"].idxmax():
+                    return "Champions"
+                else:
+                    remaining_clusters = cluster_stats.drop([cluster_stats["Recency"].idxmax(), cluster_stats["Monetary"].idxmax()], errors='ignore')
+                    if not remaining_clusters.empty and cluster_id == remaining_clusters["Frequency"].idxmin():
+                        return "New Customers"
+                    else:
+                        return "Loyal"
 
             rfm["Segment"] = rfm["Cluster"].apply(_segment_label)
         else:
@@ -1264,7 +1267,7 @@ import hashlib
 import time
 import json
 import uuid
-import datetime
+# Redundant datetime import removed to avoid shadowing the class at the top of the file
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 from pydantic import BaseModel
@@ -1569,7 +1572,7 @@ def submit_ai_insight_feedback(insight_id: str, request: Request, payload: dict,
             "useful": useful,
             "comment": comment,
             "user": user_key,
-            "ts": datetime.datetime.utcnow().isoformat(),
+            "ts": datetime.utcnow().isoformat(),
         }
     )
     return {"ok": True}
@@ -1805,16 +1808,16 @@ def _compute_analysis_bundle(filters: FiltersPayload):
             cluster_stats = rfm.groupby("Cluster").agg({"Recency": "mean", "Frequency": "mean", "Monetary": "mean"})
 
             def _segment_label(cluster_id):
-                recency_rank = cluster_stats["Recency"].rank()[cluster_id]
-                frequency_rank = cluster_stats["Frequency"].rank()[cluster_id]
-                monetary_rank = cluster_stats["Monetary"].rank()[cluster_id]
-                if frequency_rank >= 3 and monetary_rank >= 3:
-                    return "Champions"
-                if recency_rank >= 3:
+                if cluster_id == cluster_stats["Recency"].idxmax():
                     return "At Risk"
-                if frequency_rank <= 2 and monetary_rank <= 2:
-                    return "New Customers"
-                return "Loyal"
+                elif cluster_id == cluster_stats["Monetary"].idxmax():
+                    return "Champions"
+                else:
+                    remaining_clusters = cluster_stats.drop([cluster_stats["Recency"].idxmax(), cluster_stats["Monetary"].idxmax()], errors='ignore')
+                    if not remaining_clusters.empty and cluster_id == remaining_clusters["Frequency"].idxmin():
+                        return "New Customers"
+                    else:
+                        return "Loyal"
 
             rfm["Segment"] = rfm["Cluster"].apply(_segment_label)
         else:
