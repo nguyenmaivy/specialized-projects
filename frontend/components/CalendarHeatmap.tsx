@@ -6,9 +6,10 @@ import { Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CalendarHeatmapProps {
     data: HeatmapData[];
+    onInsight?: (type: 'point' | 'range', selectionData: any) => void;
 }
 
-export default function CalendarHeatmap({ data }: CalendarHeatmapProps) {
+export default function CalendarHeatmap({ data, onInsight }: CalendarHeatmapProps) {
     // Get all available months from data
     const availableMonths = useMemo(() => {
         const monthSet = new Map<string, { year: number; month: number; label: string }>();
@@ -33,6 +34,11 @@ export default function CalendarHeatmap({ data }: CalendarHeatmapProps) {
     const [selectedMonthIdx, setSelectedMonthIdx] = useState<number>(
         Math.max(availableMonths.length - 1, 0)
     );
+
+    // Range selection state
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragStart, setDragStart] = useState<string | null>(null);
+    const [dragEnd, setDragEnd] = useState<string | null>(null);
 
     // Current selected month info
     const currentMonth = availableMonths[selectedMonthIdx] || null;
@@ -115,6 +121,54 @@ export default function CalendarHeatmap({ data }: CalendarHeatmapProps) {
 
     const getDayShortName = (dayIndex: number) => {
         return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][dayIndex];
+    };
+
+    const handleMouseDown = (dateStr: string) => {
+        setIsDragging(true);
+        setDragStart(dateStr);
+        setDragEnd(dateStr);
+    };
+
+    const handleMouseEnter = (dateStr: string) => {
+        if (isDragging) {
+            setDragEnd(dateStr);
+        }
+    };
+
+    const handleMouseUp = () => {
+        if (isDragging && dragStart && dragEnd) {
+            setIsDragging(false);
+            if (dragStart === dragEnd) {
+                // Point selection
+                const val = dataMap.get(dragStart) || 0;
+                onInsight?.('point', { x: dragStart, y: val });
+            } else {
+                // Range selection
+                const dates = [new Date(dragStart), new Date(dragEnd)].sort((a, b) => a.getTime() - b.getTime());
+                const startStr = `${dates[0].getFullYear()}-${String(dates[0].getMonth() + 1).padStart(2, '0')}-${String(dates[0].getDate()).padStart(2, '0')}`;
+                const endStr = `${dates[1].getFullYear()}-${String(dates[1].getMonth() + 1).padStart(2, '0')}-${String(dates[1].getDate()).padStart(2, '0')}`;
+                
+                // compute aggregates for range
+                let sum = 0;
+                let count = 0;
+                let min = Infinity;
+                let max = -Infinity;
+                
+                data.forEach(d => {
+                    if (d.day >= startStr && d.day <= endStr) {
+                        sum += d.value;
+                        count++;
+                        if (d.value < min) min = d.value;
+                        if (d.value > max) max = d.value;
+                    }
+                });
+                
+                if (count === 0) { min = 0; max = 0; }
+                const mean = count > 0 ? sum / count : 0;
+
+                onInsight?.('range', { start: startStr, end: endStr, sum, mean, min, max, count });
+            }
+        }
     };
 
     const canPrev = selectedMonthIdx > 0;
@@ -201,16 +255,30 @@ export default function CalendarHeatmap({ data }: CalendarHeatmapProps) {
                                         : null;
                                     const value = dateStr ? dataMap.get(dateStr) : undefined;
 
+                                    let isSelected = false;
+                                    if (dateStr && dragStart && dragEnd && isDragging) {
+                                        const d = new Date(dateStr).getTime();
+                                        const s = new Date(dragStart).getTime();
+                                        const e = new Date(dragEnd).getTime();
+                                        if (d >= Math.min(s, e) && d <= Math.max(s, e)) {
+                                            isSelected = true;
+                                        }
+                                    }
+
                                     return (
                                         <div
                                             key={dayIndex}
                                             title={dateStr && value !== undefined ? `${dateStr}: $${value.toLocaleString()}` : dateStr || ''}
+                                            onMouseDown={() => dateStr && handleMouseDown(dateStr)}
+                                            onMouseEnter={() => dateStr && handleMouseEnter(dateStr)}
+                                            onMouseUp={handleMouseUp}
                                             className={`
-                                                aspect-square rounded-lg border flex items-center justify-center
+                                                aspect-square rounded-lg border flex items-center justify-center select-none
                                                 text-xs cursor-pointer transition-all duration-200
                                                 ${date ? getColor(value) : 'bg-transparent border-transparent'}
                                                 ${date ? 'border-gray-200 hover:ring-2 hover:ring-indigo-400 hover:scale-105' : ''}
                                                 ${date && value !== undefined && value > 0 ? 'text-white font-bold' : 'text-gray-400 font-normal'}
+                                                ${isSelected ? 'ring-2 ring-indigo-500 scale-105 opacity-80' : ''}
                                             `}
                                         >
                                             {date && <span>{date.getDate()}</span>}
