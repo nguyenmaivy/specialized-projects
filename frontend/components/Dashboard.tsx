@@ -19,6 +19,8 @@ import * as api from '@/lib/api';
 import { Filter, DollarSign, ShoppingCart, Percent, TrendingUp, Calendar, MapPin, Tag, LucideIcon } from 'lucide-react';
 import CalendarHeatmap from './CalendarHeatmap';
 
+import ChartInsightPanel from './ChartInsightPanel';
+
 
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement, BarElement, Filler);
@@ -40,6 +42,79 @@ export default function Dashboard() {
     const [regionSales, setRegionSales] = useState<api.RegionSaleItem[]>([]);
     const [forecast, setForecast] = useState<api.ForecastItem[]>([]);
     const [heatmapData, setHeatmapData] = useState<api.HeatmapData[]>([]);
+    const [insightsRefreshKey, setInsightsRefreshKey] = useState(0);
+    const [insightOpen, setInsightOpen] = useState(false);
+    const [insightTitle, setInsightTitle] = useState("");
+    const [insightRequest, setInsightRequest] = useState<api.ChartInsightRequest | null>(null);
+    const [detailLevel, setDetailLevel] = useState<api.InsightDetailLevel>("short");
+    
+    // Shift-click range selection state
+    const [rangeStartIdx, setRangeStartIdx] = useState<{ chartId: string, index: number } | null>(null);
+
+    const handleChartSelection = (
+        chartId: string,
+        chartType: string,
+        event: any,
+        elements: any[],
+        chart: any,
+        datasetIndex: number = 0
+    ) => {
+        const idx = elements?.[0]?.index;
+        if (idx == null) return;
+        
+        const labels = (chart?.data?.labels ?? []) as unknown as Array<string | number>;
+        const dataset = (chart?.data?.datasets?.[datasetIndex] ?? {}) as unknown as { data?: Array<number> };
+        const values = (dataset?.data as number[] | undefined) ?? [];
+        
+        let isRange = false;
+        let startI = idx;
+        let endI = idx;
+
+        if (event.native?.shiftKey && rangeStartIdx && rangeStartIdx.chartId === chartId) {
+            isRange = true;
+            startI = Math.min(rangeStartIdx.index, idx);
+            endI = Math.max(rangeStartIdx.index, idx);
+            setRangeStartIdx(null); // reset
+        } else {
+            setRangeStartIdx({ chartId, index: idx });
+        }
+
+        const selectedValues = values.slice(startI, endI + 1);
+        const sum = selectedValues.reduce((a, b) => a + (Number(b) || 0), 0);
+        const mean = selectedValues.length ? sum / selectedValues.length : 0;
+        const min = selectedValues.length ? Math.min(...selectedValues.map(Number)) : 0;
+        const max = selectedValues.length ? Math.max(...selectedValues.map(Number)) : 0;
+        const pct_change =
+            selectedValues.length >= 2 && selectedValues[selectedValues.length - 2]
+                ? ((selectedValues[selectedValues.length - 1] - selectedValues[selectedValues.length - 2]) / selectedValues[selectedValues.length - 2]) * 100
+                : undefined;
+
+        setInsightTitle(
+            chartId === "daily-sales-trend" ? "Daily Sales Trend" :
+            chartId === "sales-by-category" ? "Sales by Category" :
+            chartId === "regional-distribution" ? "Regional Distribution" :
+            "AI Forecast Insight"
+        );
+
+        const selectionPayload = isRange 
+            ? { range: { start: String(labels[startI] ?? ""), end: String(labels[endI] ?? "") } }
+            : { point: { x: String(labels[idx] ?? ""), y: Number(values[idx]) } };
+
+        setInsightRequest({
+            chartId,
+            chartType,
+            selection: selectionPayload,
+            aggregates: { sum, mean, min, max, pct_change },
+            filters: { category: selectedCategories, region: selectedRegions, unit: "USD" },
+            timeRange: { from: startDate, to: endDate },
+            detailLevel,
+            locale,
+        });
+        setInsightOpen(true);
+    };
+
+    const locale: api.InsightLocale =
+        typeof navigator !== 'undefined' && navigator.language?.toLowerCase().startsWith('en') ? 'en' : 'vi';
 
     // Load Filters Options
     useEffect(() => {
@@ -77,6 +152,7 @@ export default function Dashboard() {
             setRegionSales(regionData);
             setForecast(Array.isArray(forecastData) ? forecastData : []);
             setHeatmapData(heatmapDataResult);
+            setInsightsRefreshKey(prev => prev + 1);
             setLoading(false);
         }).catch(err => {
             console.error(err);
@@ -87,9 +163,15 @@ export default function Dashboard() {
     if (!filtersData) return <div className="p-10 text-center animate-pulse">Loading Dashboard...</div>;
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <ChartInsightPanel
+                open={insightOpen}
+                title={insightTitle}
+                request={insightRequest}
+                onClose={() => setInsightOpen(false)}
+            />
             {/* 🟢 Sidebar Filters */}
-            <div className="lg:col-span-1 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit sticky top-6">
+            <div className="lg:col-span-3 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit sticky top-6">
                 <div className="flex items-center gap-2 mb-6">
                     <Filter className="w-5 h-5 text-indigo-600" />
                     <h2 className="text-xl font-semibold text-gray-800">Filters</h2>
@@ -166,7 +248,7 @@ export default function Dashboard() {
             </div>
 
             {/* 🔵 Main Content */}
-            <div className="lg:col-span-3 space-y-6">
+            <div className="lg:col-span-9 space-y-6">
 
                 {/* KPIs */}
                 {kpis && (
@@ -180,7 +262,19 @@ export default function Dashboard() {
 
                 {/* Sales Trend Chart */}
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 className="text-lg font-semibold mb-4 text-gray-800">Daily Sales Trend</h3>
+                    <div className="flex items-center justify-between mb-4 gap-3">
+                        <h3 className="text-lg font-semibold text-gray-800">Daily Sales Trend</h3>
+                        <select
+                            value={detailLevel}
+                            onChange={(e) => setDetailLevel(e.target.value as api.InsightDetailLevel)}
+                            className="text-sm border rounded-lg px-2 py-1 bg-white"
+                            title="Insight detail level"
+                        >
+                            <option value="short">short</option>
+                            <option value="medium">medium</option>
+                            <option value="detailed">detailed</option>
+                        </select>
+                    </div>
                     <div className="h-72">
                         <Line
                             data={{
@@ -194,7 +288,11 @@ export default function Dashboard() {
                                     fill: true
                                 }]
                             }}
-                            options={{ responsive: true, maintainAspectRatio: false }}
+                            options={{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                onClick: (event, elements, chart) => handleChartSelection("daily-sales-trend", "line", event, elements, chart),
+                            }}
                         />
                     </div>
                 </div>
@@ -214,7 +312,11 @@ export default function Dashboard() {
                                         borderRadius: 6
                                     }]
                                 }}
-                                options={{ responsive: true, maintainAspectRatio: false }}
+                                options={{
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    onClick: (event, elements, chart) => handleChartSelection("sales-by-category", "bar", event, elements, chart),
+                                }}
                             />
                         </div>
                     </div>
@@ -232,7 +334,11 @@ export default function Dashboard() {
                                         borderWidth: 0
                                     }]
                                 }}
-                                options={{ responsive: true, maintainAspectRatio: false }}
+                                options={{
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    onClick: (event, elements, chart) => handleChartSelection("regional-distribution", "pie", event, elements, chart),
+                                }}
                             />
                         </div>
                     </div>
@@ -289,7 +395,8 @@ export default function Dashboard() {
                                     plugins: {
                                         legend: { display: true },
                                         tooltip: { mode: 'index', intersect: false }
-                                    }
+                                    },
+                                    onClick: (event, elements, chart) => handleChartSelection("forecast-trend", "line", event, elements, chart, 0), // Use dataset 0 (Forecast)
                                 }}
                             />
                         ) : (
@@ -299,9 +406,40 @@ export default function Dashboard() {
                 </div>
 
                 {/* Sales Heatmap */}
-                <CalendarHeatmap data={heatmapData} />
+                <CalendarHeatmap 
+                    data={heatmapData} 
+                    onInsight={(type, data) => {
+                        setInsightTitle("Sales Heatmap");
+                        
+                        let selectionPayload: any;
+                        if (type === 'point') {
+                            selectionPayload = { point: { x: data.x, y: data.y } };
+                        } else {
+                            selectionPayload = { range: { start: data.start, end: data.end } };
+                        }
+                        
+                        setInsightRequest({
+                            chartId: "sales-heatmap",
+                            chartType: "heatmap",
+                            selection: selectionPayload,
+                            aggregates: { 
+                                sum: data.sum || data.y || 0, 
+                                mean: data.mean || data.y || 0,
+                                min: data.min || data.y || 0,
+                                max: data.max || data.y || 0,
+                            },
+                            filters: { category: selectedCategories, region: selectedRegions, unit: "USD" },
+                            timeRange: { from: startDate, to: endDate },
+                            detailLevel,
+                            locale,
+                        });
+                        setInsightOpen(true);
+                    }}
+                />
 
             </div>
+
+
         </div>
     );
 }

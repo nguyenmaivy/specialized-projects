@@ -125,14 +125,15 @@ AI-Powered-Sales-Forecasting-Dashboard/
 git clone https://github.com/your-username/AI-Powered-Sales-Forecasting-Dashboard.git
 cd AI-Powered-Sales-Forecasting-Dashboard
 ```
-
+docker compose up -d --build
 #### 2. Backend Setup - Thiết Lập Backend
 ```bash
 cd backend
 pip install -r requirements.txt
-python main.py
+python main.py / uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 Backend runs on **http://localhost:8000**
+
 
 #### 3. Frontend Setup - Thiết Lập Frontend
 ```bash

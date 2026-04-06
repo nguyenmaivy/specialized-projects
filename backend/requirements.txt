@@ -16,6 +16,14 @@ slowapi
 
 # Configuration
 python-dotenv
+sqlalchemy
+psycopg[binary]
+openai
+
+# Document parsing
+PyPDF2
+python-docx
+requests
 
 # Testing
 flake8

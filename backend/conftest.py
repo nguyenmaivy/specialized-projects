@@ -6,6 +6,14 @@ import os
 # Override AUTH_REQUIRED before importing app so tests always run without auth
 os.environ["AUTH_REQUIRED"] = "false"
 
+import sys
+from pathlib import Path
+
+# Ensure repo root is on sys.path so `backend.*` imports work even when running pytest from /backend
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 import pytest
 import pandas as pd
 import numpy as np
