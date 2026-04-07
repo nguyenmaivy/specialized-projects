@@ -314,3 +314,39 @@
 2026-04-05 20:43:10,472 - main - INFO - ✅ Customer segmentation completed
 2026-04-05 20:43:10,501 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 885.94ms - IP: 127.0.0.1
 2026-04-05 20:46:12,865 - main - INFO - GET /api/customer-segmentation - Status: 401 - Time: 1.07ms - IP: 127.0.0.1
+2026-04-06 23:49:44,264 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 2.24ms - IP: 127.0.0.1
+2026-04-06 23:49:44,266 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 2.66ms - IP: 127.0.0.1
+2026-04-06 23:49:44,320 - main - INFO - GET /api/filters - Status: 401 - Time: 52.13ms - IP: 127.0.0.1
+2026-04-06 23:49:44,323 - main - INFO - GET /api/filters - Status: 401 - Time: 3.62ms - IP: 127.0.0.1
+2026-04-06 23:49:46,268 - main - INFO - OPTIONS /auth/login - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-06 23:49:46,573 - main - INFO - ✅ User logged in: admin
+2026-04-06 23:49:46,576 - main - INFO - POST /auth/login - Status: 200 - Time: 305.14ms - IP: 127.0.0.1
+2026-04-06 23:49:46,587 - main - INFO - OPTIONS /auth/me - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-06 23:49:46,592 - main - INFO - GET /auth/me - Status: 200 - Time: 2.34ms - IP: 127.0.0.1
+2026-04-06 23:49:46,770 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-06 23:49:46,773 - main - INFO - GET /api/filters - Status: 200 - Time: 171.84ms - IP: 127.0.0.1
+2026-04-06 23:49:46,780 - main - INFO - GET /api/filters - Status: 200 - Time: 3.73ms - IP: 127.0.0.1
+2026-04-06 23:49:46,866 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-06 23:49:46,874 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 1.02ms - IP: 127.0.0.1
+2026-04-06 23:49:46,881 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 7.86ms - IP: 127.0.0.1
+2026-04-06 23:49:46,890 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 2.0ms - IP: 127.0.0.1
+2026-04-06 23:49:46,891 - main - INFO - GET /api/kpis - Status: 200 - Time: 21.57ms - IP: 127.0.0.1
+2026-04-06 23:49:46,892 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 3.0ms - IP: 127.0.0.1
+2026-04-06 23:49:46,901 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 7.69ms - IP: 127.0.0.1
+2026-04-06 23:49:46,954 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 57.36ms - IP: 127.0.0.1
+2026-04-06 23:49:46,954 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 48.24ms - IP: 127.0.0.1
+2026-04-06 23:49:46,956 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 63.06ms - IP: 127.0.0.1
+2026-04-06 23:49:46,979 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-06 23:49:46,997 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 34.58ms - IP: 127.0.0.1
+2026-04-06 23:49:48,358 - main - INFO - ✅ Forecast generated successfully
+2026-04-06 23:49:48,364 - main - INFO - GET /api/forecast - Status: 200 - Time: 1406.75ms - IP: 127.0.0.1
+2026-04-06 23:49:50,998 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 1.32ms - IP: 127.0.0.1
+2026-04-06 23:49:50,999 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 1.06ms - IP: 127.0.0.1
+2026-04-06 23:49:53,746 - main - INFO - ✅ Customer segmentation completed
+2026-04-06 23:49:53,774 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 2772.94ms - IP: 127.0.0.1
+2026-04-06 23:49:54,824 - main - INFO - ✅ Customer segmentation completed
+2026-04-06 23:49:54,855 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 1077.16ms - IP: 127.0.0.1
+2026-04-07 00:57:53,786 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 4.08ms - IP: 127.0.0.1
+2026-04-07 00:57:53,810 - main - INFO - GET /api/customer-segmentation - Status: 401 - Time: 12.73ms - IP: 127.0.0.1
+2026-04-07 00:57:54,506 - main - INFO - ✅ Customer segmentation completed
+2026-04-07 00:57:54,523 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 501.53ms - IP: 127.0.0.1

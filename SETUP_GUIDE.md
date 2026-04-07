@@ -655,6 +655,9 @@ OPENROUTER_MODEL=nvidia/nemotron-3-super-120b-a12b:free
 Dự án có sẵn `docker-compose.yml` với các services:
 
 ```bash
+# Khởi chạy PostgreSQL container chạy ngầm (detached mode)
+docker-compose up -d
+
 # Build & start tất cả services
 docker-compose up --build
 
