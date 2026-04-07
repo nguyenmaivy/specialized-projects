@@ -314,6 +314,7 @@
 2026-04-05 20:43:10,472 - main - INFO - ✅ Customer segmentation completed
 2026-04-05 20:43:10,501 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 885.94ms - IP: 127.0.0.1
 2026-04-05 20:46:12,865 - main - INFO - GET /api/customer-segmentation - Status: 401 - Time: 1.07ms - IP: 127.0.0.1
+<<<<<<< HEAD
 2026-04-06 23:49:44,264 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 2.24ms - IP: 127.0.0.1
 2026-04-06 23:49:44,266 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 2.66ms - IP: 127.0.0.1
 2026-04-06 23:49:44,320 - main - INFO - GET /api/filters - Status: 401 - Time: 52.13ms - IP: 127.0.0.1
@@ -350,3 +351,538 @@
 2026-04-07 00:57:53,810 - main - INFO - GET /api/customer-segmentation - Status: 401 - Time: 12.73ms - IP: 127.0.0.1
 2026-04-07 00:57:54,506 - main - INFO - ✅ Customer segmentation completed
 2026-04-07 00:57:54,523 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 501.53ms - IP: 127.0.0.1
+=======
+2026-04-07 11:18:08,083 - main - ERROR - Database initialization failed on startup: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection timeout expired
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+psycopg.OperationalError: connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection timeout expired
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\main.py", line 162, in _on_startup_initialize_db
+    init_db()
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\db.py", line 157, in init_db
+    with ENGINE.begin() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3257, in begin
+    with self.connect() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2448, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+sqlalchemy.exc.OperationalError: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection timeout expired
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-07 11:46:06,230 - main - ERROR - Database initialization failed on startup: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+psycopg.OperationalError: connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\main.py", line 162, in _on_startup_initialize_db
+    init_db()
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\db.py", line 157, in init_db
+    with ENGINE.begin() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3257, in begin
+    with self.connect() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2448, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+sqlalchemy.exc.OperationalError: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-07 11:46:08,313 - main - INFO - OPTIONS /auth/login - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-07 11:46:08,572 - main - INFO - ✅ User logged in: admin
+2026-04-07 11:46:08,576 - main - INFO - POST /auth/login - Status: 200 - Time: 261.48ms - IP: 127.0.0.1
+2026-04-07 11:46:08,580 - main - INFO - OPTIONS /auth/me - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-07 11:46:08,586 - main - INFO - GET /auth/me - Status: 200 - Time: 3.11ms - IP: 127.0.0.1
+2026-04-07 11:46:08,601 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 0.63ms - IP: 127.0.0.1
+2026-04-07 11:46:08,601 - main - INFO - OPTIONS /api/filters - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-07 11:46:08,676 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-07 11:46:08,680 - main - INFO - GET /api/filters - Status: 200 - Time: 76.37ms - IP: 127.0.0.1
+2026-04-07 11:46:08,687 - main - INFO - GET /api/filters - Status: 200 - Time: 7.33ms - IP: 127.0.0.1
+2026-04-07 11:46:08,738 - main - INFO - OPTIONS /api/kpis - Status: 200 - Time: 0.51ms - IP: 127.0.0.1
+2026-04-07 11:46:08,739 - main - INFO - OPTIONS /api/charts/sales-trend - Status: 200 - Time: 1.31ms - IP: 127.0.0.1
+2026-04-07 11:46:08,740 - main - INFO - OPTIONS /api/charts/category-sales - Status: 200 - Time: 1.0ms - IP: 127.0.0.1
+2026-04-07 11:46:08,743 - main - INFO - OPTIONS /api/charts/region-sales - Status: 200 - Time: 0.76ms - IP: 127.0.0.1
+2026-04-07 11:46:08,744 - main - INFO - OPTIONS /api/forecast - Status: 200 - Time: 2.15ms - IP: 127.0.0.1
+2026-04-07 11:46:08,744 - main - INFO - OPTIONS /api/sales-heatmap - Status: 200 - Time: 1.39ms - IP: 127.0.0.1
+2026-04-07 11:46:08,777 - main - INFO - GET /api/kpis - Status: 200 - Time: 31.48ms - IP: 127.0.0.1
+2026-04-07 11:46:08,793 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 43.22ms - IP: 127.0.0.1
+2026-04-07 11:46:08,798 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 48.49ms - IP: 127.0.0.1
+2026-04-07 11:46:08,800 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 18.94ms - IP: 127.0.0.1
+2026-04-07 11:46:08,814 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-07 11:46:08,826 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 19.3ms - IP: 127.0.0.1
+2026-04-07 11:46:09,862 - main - INFO - ✅ Forecast generated successfully
+2026-04-07 11:46:09,864 - main - INFO - GET /api/forecast - Status: 200 - Time: 1059.48ms - IP: 127.0.0.1
+2026-04-07 11:46:15,929 - main - INFO - OPTIONS /api/ai/insights - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-07 11:46:15,994 - main - ERROR - Error in generate_ai_insights: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+psycopg.OperationalError: connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\main.py", line 1236, in generate_ai_insights
+    dataset_id = get_active_dataset_id()
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\db.py", line 165, in get_active_dataset_id
+    with ENGINE.begin() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3257, in begin
+    with self.connect() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2448, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+sqlalchemy.exc.OperationalError: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-07 11:46:15,996 - main - INFO - POST /api/ai/insights - Status: 500 - Time: 64.82ms - IP: 127.0.0.1
+2026-04-07 11:46:55,801 - main - ERROR - Error in generate_ai_insights: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+psycopg.OperationalError: connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\main.py", line 1236, in generate_ai_insights
+    dataset_id = get_active_dataset_id()
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\db.py", line 165, in get_active_dataset_id
+    with ENGINE.begin() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3257, in begin
+    with self.connect() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2448, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+sqlalchemy.exc.OperationalError: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-07 11:46:55,804 - main - INFO - POST /api/ai/insights - Status: 500 - Time: 55.23ms - IP: 127.0.0.1
+2026-04-07 11:46:57,883 - main - ERROR - Error in generate_ai_insights: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+psycopg.OperationalError: connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\main.py", line 1236, in generate_ai_insights
+    dataset_id = get_active_dataset_id()
+  File "D:\Nam-4\HK2\DoAnChuyenNganh-Dat\DO-AN-CHUYEN-NGANH\AI-Powered-Sales-Forecasting-Dashboard\backend\db.py", line 165, in get_active_dataset_id
+    with ENGINE.begin() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3257, in begin
+    with self.connect() as conn:
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3293, in connect
+    return self._connection_cls(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2448, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3317, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+  File "C:\Users\MZI\AppData\Local\Programs\Python\Python310\lib\site-packages\psycopg\connection.py", line 130, in connect
+    raise new_ex.with_traceback(None)
+sqlalchemy.exc.OperationalError: (psycopg.OperationalError) connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': connection failed: connection to server at "::1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 5432 failed: FATAL:  password authentication failed for user "sales_user"
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-07 11:46:57,886 - main - INFO - POST /api/ai/insights - Status: 500 - Time: 44.76ms - IP: 127.0.0.1
+2026-04-07 11:46:59,398 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 0.0ms - IP: 127.0.0.1
+2026-04-07 11:46:59,401 - main - INFO - OPTIONS /api/customer-segmentation - Status: 200 - Time: 1.01ms - IP: 127.0.0.1
+2026-04-07 11:47:01,216 - main - INFO - ✅ Customer segmentation completed
+2026-04-07 11:47:01,236 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 1834.32ms - IP: 127.0.0.1
+2026-04-07 11:47:01,550 - main - INFO - ✅ Customer segmentation completed
+2026-04-07 11:47:01,564 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 327.48ms - IP: 127.0.0.1
+2026-04-07 11:47:03,804 - main - INFO - GET /api/filters - Status: 200 - Time: 2.8ms - IP: 127.0.0.1
+2026-04-07 11:47:03,811 - main - INFO - GET /api/filters - Status: 200 - Time: 4.25ms - IP: 127.0.0.1
+2026-04-07 11:47:03,867 - main - INFO - GET /api/kpis - Status: 200 - Time: 28.9ms - IP: 127.0.0.1
+2026-04-07 11:47:03,869 - main - INFO - GET /api/charts/sales-trend - Status: 200 - Time: 29.49ms - IP: 127.0.0.1
+2026-04-07 11:47:03,871 - main - INFO - GET /api/charts/category-sales - Status: 200 - Time: 31.55ms - IP: 127.0.0.1
+2026-04-07 11:47:03,887 - main - INFO - GET /api/charts/region-sales - Status: 200 - Time: 15.56ms - IP: 127.0.0.1
+2026-04-07 11:47:03,892 - main - INFO - ✅ Heatmap data generated: 1237 days
+2026-04-07 11:47:03,908 - main - INFO - GET /api/sales-heatmap - Status: 200 - Time: 34.44ms - IP: 127.0.0.1
+2026-04-07 11:47:04,275 - main - INFO - ✅ Forecast generated successfully
+2026-04-07 11:47:04,277 - main - INFO - GET /api/forecast - Status: 200 - Time: 404.51ms - IP: 127.0.0.1
+2026-04-07 11:47:05,740 - main - INFO - ✅ Customer segmentation completed
+2026-04-07 11:47:05,763 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 298.4ms - IP: 127.0.0.1
+2026-04-07 11:47:06,058 - main - INFO - ✅ Customer segmentation completed
+2026-04-07 11:47:06,074 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 311.07ms - IP: 127.0.0.1
+>>>>>>> ai_generate_insight
