@@ -143,6 +143,39 @@ npm run dev
 ```
 Frontend runs on **http://localhost:3000**
 
+#### 4. Truy cập pgAdmin để xem database
+
+Mở trình duyệt và truy cập:
+→ http://localhost:5050
+Đăng nhập pgAdmin:
+Email: admin@admin.com
+Password: admin123
+
+Thêm Server mới (Register Server):
+General → Name: AI Sales Insight DB (tùy bạn đặt)
+Connection tab:
+Host name/address: postgres         
+Port: 5432
+Maintenance database: sales_dashboard 
+Username: sales_user 
+Password: 123456
+
+
+Nhấn Save.
+
+Nếu kết nối thành công, bạn sẽ thấy danh sách các bảng trong schema public.
+Các bảng quan trọng cần xem trong project này:
+
+users → danh sách người dùng
+datasets
+analysis_runs → các lần phân tích đã chạy
+widgets → các insight được sinh ra (rất quan trọng để debug format insight)
+chat_history
+knowledge_chunks
+
+Bạn có thể click chuột phải vào bảng → View/Edit Data → All Rows để xem dữ liệu.
+
+
 ### Quick Start Script (Windows)
 ```bash
 # Chạy từ thư mục gốc dự án
