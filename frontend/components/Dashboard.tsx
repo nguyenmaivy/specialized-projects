@@ -105,7 +105,8 @@ export default function Dashboard() {
             chartType,
             selection: selectionPayload,
             aggregates: { sum, mean, min, max, pct_change },
-            filters: { category: selectedCategories, region: selectedRegions, unit: "USD" },
+            // include start_date/end_date so backend _compute_analysis_bundle applies the same filters
+            filters: { category: selectedCategories, region: selectedRegions, start_date: startDate, end_date: endDate, unit: "USD" },
             timeRange: { from: startDate, to: endDate },
             detailLevel,
             locale,
