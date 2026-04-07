@@ -847,3 +847,15 @@ Multiple connection attempts failed. All failures were:
 2026-04-07 11:47:05,763 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 298.4ms - IP: 127.0.0.1
 2026-04-07 11:47:06,058 - main - INFO - ✅ Customer segmentation completed
 2026-04-07 11:47:06,074 - main - INFO - GET /api/customer-segmentation - Status: 200 - Time: 311.07ms - IP: 127.0.0.1
+2026-04-07 14:44:42,534 - main - INFO - Database initialization completed on startup
+2026-04-07 14:58:08,351 - main - INFO - Database initialization completed on startup
+2026-04-07 14:59:15,033 - main - INFO - Database initialization completed on startup
+2026-04-07 14:59:25,296 - main - INFO - Database initialization completed on startup
+2026-04-07 14:59:56,739 - main - INFO - Database initialization completed on startup
+2026-04-07 15:00:18,427 - main - INFO - Database initialization completed on startup
+2026-04-07 15:00:23,054 - main - INFO - Database initialization completed on startup
+2026-04-07 15:00:45,701 - main - INFO - Database initialization completed on startup
+2026-04-07 15:00:50,377 - main - INFO - Database initialization completed on startup
+2026-04-07 15:01:43,874 - main - INFO - Database initialization completed on startup
+2026-04-07 15:01:47,496 - main - INFO - Database initialization completed on startup
+2026-04-07 15:04:58,421 - main - INFO - Database initialization completed on startup
