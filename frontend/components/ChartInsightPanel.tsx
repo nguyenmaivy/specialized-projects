@@ -29,6 +29,51 @@ export default function ChartInsightPanel({ open, title, request, onClose }: Pro
     return `${title} · ${detailLevel} · ${localeLabel(locale)}`;
   }, [title, detailLevel, locale]);
 
+  /** Parse basic markdown: **bold**, bullet points, numbered lists */
+  function renderMarkdown(text: string) {
+    const lines = (text || "").split("\n");
+    return lines.map((line, i) => {
+      const trimmed = line.trim();
+      if (!trimmed) return <br key={i} />;
+
+      // Parse inline **bold**
+      const parts = trimmed.split(/(\*\*[^*]+\*\*)/g);
+      const rendered = parts.map((part, j) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return (
+            <strong key={j} className="font-semibold text-indigo-700">
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+        return part;
+      });
+
+      // Bullet point
+      if (trimmed.startsWith("- ") || trimmed.startsWith("• ")) {
+        return (
+          <div key={i} className="flex gap-1.5 ml-1">
+            <span className="text-indigo-400 mt-0.5">•</span>
+            <span>{rendered.map((r, idx) => (typeof r === "string" ? r.replace(/^[-•]\s*/, "") : r))}</span>
+          </div>
+        );
+      }
+
+      // Numbered list
+      const numMatch = trimmed.match(/^(\d+)\.\s/);
+      if (numMatch) {
+        return (
+          <div key={i} className="flex gap-1.5 ml-1">
+            <span className="text-indigo-400 font-medium min-w-[1.2em]">{numMatch[1]}.</span>
+            <span>{rendered.map((r, idx) => (typeof r === "string" ? r.replace(/^\d+\.\s*/, "") : r))}</span>
+          </div>
+        );
+      }
+
+      return <p key={i}>{rendered}</p>;
+    });
+  }
+
   useEffect(() => {
     let cancelled = false;
     let pollTimer: ReturnType<typeof setTimeout> | null = null;
@@ -132,7 +177,7 @@ export default function ChartInsightPanel({ open, title, request, onClose }: Pro
           {insight ? (
             <>
               <div className="p-3 rounded-lg bg-indigo-50 border border-indigo-100 text-sm text-gray-800">
-                {insight.summary}
+                <div className="space-y-1">{renderMarkdown(insight.summary)}</div>
               </div>
 
               {insight.highlights?.length ? (
@@ -142,7 +187,7 @@ export default function ChartInsightPanel({ open, title, request, onClose }: Pro
                     {insight.highlights.map((h, i) => (
                       <li key={i} className="flex gap-2">
                         <span className="text-indigo-500 mt-0.5">•</span>
-                        <span>{h}</span>
+                        <span>{renderMarkdown(h)}</span>
                       </li>
                     ))}
                   </ul>
@@ -155,7 +200,7 @@ export default function ChartInsightPanel({ open, title, request, onClose }: Pro
                   <div className="space-y-2 text-sm text-gray-700">
                     {insight.explanations.map((e, i) => (
                       <div key={i} className="p-3 rounded-lg border border-gray-200">
-                        <div>{e.text}</div>
+                        <div>{renderMarkdown(e.text)}</div>
                         {e.metric_reference ? (
                           <div className="text-xs text-gray-500 mt-1">{e.metric_reference}</div>
                         ) : null}
@@ -172,7 +217,7 @@ export default function ChartInsightPanel({ open, title, request, onClose }: Pro
                     {insight.actions.map((a, i) => (
                       <li key={i} className="flex gap-2">
                         <span className="text-emerald-600 mt-0.5">•</span>
-                        <span>{a}</span>
+                        <span>{renderMarkdown(a)}</span>
                       </li>
                     ))}
                   </ul>
