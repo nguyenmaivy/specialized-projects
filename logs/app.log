@@ -1,0 +1,150 @@
+2026-04-05 18:17:10,849 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-05 18:18:21,201 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-07 00:34:06,094 - main - INFO - Database initialization completed on startup
+2026-04-07 00:34:13,010 - main - INFO - Database initialization completed on startup
+2026-04-07 01:08:31,554 - main - INFO - Database initialization completed on startup
+2026-04-07 01:08:31,627 - main - INFO - Database initialization completed on startup
+2026-04-07 01:21:39,370 - main - INFO - Database initialization completed on startup
+2026-04-07 01:24:07,093 - main - INFO - Database initialization completed on startup
+2026-04-07 01:24:19,919 - main - INFO - Database initialization completed on startup
+2026-04-07 01:34:26,274 - main - INFO - Database initialization completed on startup
+2026-04-07 01:34:26,741 - main - INFO - Database initialization completed on startup
+2026-04-07 01:39:56,907 - main - INFO - Database initialization completed on startup
+2026-04-07 02:01:14,260 - main - INFO - Database initialization completed on startup
+2026-04-07 02:01:15,751 - main - INFO - Database initialization completed on startup
+2026-04-07 02:10:19,762 - main - INFO - Database initialization completed on startup
+2026-04-07 02:10:27,819 - main - INFO - Database initialization completed on startup
+2026-04-07 02:27:12,067 - main - INFO - Database initialization completed on startup
+2026-04-07 02:27:13,829 - main - INFO - Database initialization completed on startup
+2026-04-07 02:28:00,156 - main - INFO - Database initialization completed on startup
+2026-04-07 03:14:35,949 - main - INFO - Database initialization completed on startup
+2026-04-07 03:16:46,491 - main - INFO - Database initialization completed on startup
+2026-04-07 03:29:51,710 - main - INFO - Database initialization completed on startup
+2026-04-07 03:32:01,503 - main - INFO - Database initialization completed on startup
+2026-04-07 03:32:05,866 - main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-07 03:32:05,875 - main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 03:32:14,919 - main - INFO - POST /api/ai/insights - Status: 200 - Time: 10006.64ms - IP: 127.0.0.1
+2026-04-07 03:35:05,330 - backend.main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-07 03:35:05,332 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 03:35:10,799 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 03:35:12,384 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 03:35:14,178 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 03:35:15,978 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 03:35:18,036 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 03:35:19,908 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 03:36:05,640 - main - INFO - GET /api/ai/insights/fa1e6751-32d9-45c5-ab82-096c6a8a3734 - Status: 404 - Time: 78.44ms - IP: 127.0.0.1
+2026-04-07 06:22:00,393 - main - INFO - Database initialization completed on startup
+2026-04-07 06:57:45,858 - main - INFO - Database initialization completed on startup
+2026-04-07 07:05:26,744 - main - INFO - Database initialization completed on startup
+2026-04-07 07:05:26,744 - main - INFO - Database initialization completed on startup
+2026-04-07 07:07:15,694 - main - INFO - Database initialization completed on startup
+2026-04-07 07:07:15,718 - main - INFO - Database initialization completed on startup
+2026-04-07 07:12:00,119 - main - INFO - Database initialization completed on startup
+2026-04-07 07:12:44,575 - main - INFO - Database initialization completed on startup
+2026-04-07 07:12:47,955 - main - INFO - Database initialization completed on startup
+2026-04-07 07:12:48,636 - main - INFO - Database initialization completed on startup
+2026-04-07 07:14:53,326 - main - INFO - Database initialization completed on startup
+2026-04-07 07:14:53,327 - main - INFO - Database initialization completed on startup
+2026-04-07 07:14:53,327 - main - INFO - Database initialization completed on startup
+2026-04-07 07:20:58,198 - main - INFO - Database initialization completed on startup
+2026-04-07 07:21:00,968 - main - INFO - Database initialization completed on startup
+2026-04-07 07:21:02,065 - main - INFO - Database initialization completed on startup
+2026-04-07 07:21:20,277 - main - INFO - Database initialization completed on startup
+2026-04-07 07:21:20,498 - main - INFO - Database initialization completed on startup
+2026-04-07 07:21:22,069 - main - INFO - Database initialization completed on startup
+2026-04-07 07:30:07,759 - main - INFO - Database initialization completed on startup
+2026-04-07 07:30:07,827 - main - INFO - Database initialization completed on startup
+2026-04-07 07:30:07,874 - main - INFO - Database initialization completed on startup
+2026-04-07 07:30:27,778 - main - INFO - Database initialization completed on startup
+2026-04-07 07:30:27,800 - main - INFO - Database initialization completed on startup
+2026-04-07 07:30:28,035 - main - INFO - Database initialization completed on startup
+2026-04-07 07:32:33,728 - main - INFO - Database initialization completed on startup
+2026-04-07 07:44:20,642 - main - INFO - Database initialization completed on startup
+2026-04-07 07:44:20,666 - main - INFO - Database initialization completed on startup
+2026-04-07 07:54:21,670 - backend.main - INFO - ✅ Data loaded successfully: 9994 records
+2026-04-07 07:54:21,674 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:27,734 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:30,186 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:33,150 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:35,021 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:36,701 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:38,661 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:40,380 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:42,171 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:43,802 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:45,332 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:46,877 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:48,618 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:50,086 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:52,002 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:54,229 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:55,770 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:57,502 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:54:59,250 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:55:00,863 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:55:02,426 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:55:04,115 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:55:05,834 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:55:08,349 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 07:55:10,268 - backend.main - INFO - load_data thành công: 9994 records, columns: ['Order ID', 'Order Date', 'Customer ID', 'Customer Name', 'Region', 'Category', 'Sales', 'Profit', 'Discount']
+2026-04-07 08:38:04,175 - main - INFO - Database initialization completed on startup
+2026-04-07 08:38:04,185 - main - INFO - Database initialization completed on startup
+2026-04-07 08:38:04,475 - main - INFO - Database initialization completed on startup
+2026-04-07 08:38:54,765 - main - INFO - Database initialization completed on startup
+2026-04-07 08:43:14,524 - main - INFO - Database initialization completed on startup
+2026-04-07 08:48:47,648 - main - INFO - ✅ Database tables created successfully
+2026-04-07 08:48:47,649 - main - INFO - ✅ Database tables created successfully
+2026-04-07 08:48:47,650 - main - INFO - ✅ Database tables created successfully
+2026-04-07 08:48:47,664 - main - INFO - ✅ Database tables created successfully
+2026-04-07 08:48:47,717 - main - INFO - 🚀 Application startup completed successfully
+2026-04-07 08:48:47,724 - main - INFO - 🚀 Application startup completed successfully
+2026-04-07 08:48:47,724 - main - INFO - 🚀 Application startup completed successfully
+2026-04-07 08:48:47,730 - main - INFO - 🚀 Application startup completed successfully
+2026-04-07 08:49:04,908 - main - INFO - ✅ Database tables created successfully
+2026-04-07 08:49:04,921 - main - INFO - 🚀 Application startup completed successfully
+2026-04-07 09:03:00,827 - main - INFO - ✅ Database tables created successfully
+2026-04-07 09:03:00,907 - main - INFO - 🚀 Application startup completed successfully
+2026-04-07 09:10:12,740 - main - INFO - ✅ Database tables created successfully
+2026-04-07 09:10:12,755 - main - INFO - 🚀 Application startup completed successfully
+2026-04-07 09:15:29,940 - main - INFO - ✅ Database tables created successfully
+2026-04-07 09:15:29,966 - main - INFO - 🚀 Application startup completed successfully
+2026-04-07 09:21:28,700 - main - INFO - Database initialization completed on startup
+2026-04-07 09:21:28,717 - main - INFO - Database initialization completed on startup
+2026-04-07 09:21:41,421 - main - INFO - Database initialization completed on startup
+2026-04-07 09:22:29,470 - main - INFO - Database initialization completed on startup
+2026-04-07 09:22:29,541 - main - INFO - Database initialization completed on startup
+2026-04-07 09:22:29,746 - main - INFO - Database initialization completed on startup
+2026-04-07 09:23:06,380 - main - INFO - Database initialization completed on startup
+2026-04-07 09:23:06,412 - main - INFO - Database initialization completed on startup
+2026-04-07 09:23:06,476 - main - INFO - Database initialization completed on startup
+2026-04-07 09:23:43,056 - main - INFO - Database initialization completed on startup
+2026-04-07 09:28:52,591 - main - INFO - Database initialization completed on startup
+2026-04-07 09:37:44,168 - main - INFO - Database initialization completed on startup
+2026-04-07 09:50:29,254 - main - INFO - Database initialization completed on startup
+2026-04-07 09:51:25,186 - main - INFO - Database initialization completed on startup
+2026-04-07 09:52:47,619 - main - INFO - Database initialization completed on startup
+2026-04-07 10:11:54,157 - main - INFO - Database initialization completed on startup
+2026-04-07 10:26:19,409 - main - INFO - Database initialization completed on startup
+2026-04-07 10:38:37,128 - main - INFO - Database initialization completed on startup
+2026-04-07 10:55:37,003 - main - INFO - Database initialization completed on startup
+2026-04-07 10:58:11,233 - main - INFO - Database initialization completed on startup
+2026-04-07 10:59:09,629 - main - INFO - Database initialization completed on startup
+2026-04-07 12:04:07,366 - main - INFO - Database initialization completed on startup
+2026-04-07 12:04:29,917 - main - INFO - Database initialization completed on startup
+2026-04-07 12:06:03,400 - main - INFO - Database initialization completed on startup
+2026-04-07 16:20:05,091 - main - INFO - Database initialization completed on startup
+2026-04-07 16:20:17,624 - main - INFO - Database initialization completed on startup
+2026-04-07 16:28:05,583 - main - INFO - Database initialization completed on startup
+2026-04-07 16:29:36,261 - main - INFO - Database initialization completed on startup
+2026-04-07 16:32:20,121 - main - INFO - Database initialization completed on startup
+2026-04-07 16:32:27,392 - main - INFO - Database initialization completed on startup
+2026-04-07 16:32:52,110 - main - INFO - Database initialization completed on startup
+2026-04-07 16:33:16,508 - main - INFO - Database initialization completed on startup
+2026-04-07 16:36:24,054 - main - INFO - Database initialization completed on startup
+2026-04-07 16:36:35,792 - main - INFO - Database initialization completed on startup
+2026-04-07 16:37:02,724 - main - INFO - Database initialization completed on startup
+2026-04-07 16:37:13,061 - main - INFO - Database initialization completed on startup
+2026-04-07 16:40:33,120 - main - INFO - Database initialization completed on startup
+2026-04-07 16:42:59,024 - main - INFO - Database initialization completed on startup
+2026-04-07 16:48:07,700 - main - INFO - Database initialization completed on startup
+2026-04-07 17:04:05,452 - main - INFO - Database initialization completed on startup

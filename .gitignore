@@ -1,0 +1,3 @@
+# Root .gitignore — ignore sensitive and local environment files
+docker-compose.yml
+backend/.env

@@ -29,6 +29,38 @@ export default function ChartInsightPanel({ open, title, request, onClose }: Pro
     return `${title} · ${detailLevel} · ${localeLabel(locale)}`;
   }, [title, detailLevel, locale]);
 
+  /** Parse basic markdown: **bold**, bullet points */
+  function renderMarkdown(text: string) {
+    const lines = (text || "").split("\n");
+    return lines.map((line, i) => {
+      const trimmed = line.trim();
+      if (!trimmed) return <br key={i} />;
+
+      const parts = trimmed.split(/(\*\*[^*]+\*\*)/g);
+      const rendered = parts.map((part, j) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return (
+            <strong key={j} className="font-semibold text-indigo-700">
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+        return part;
+      });
+
+      if (trimmed.startsWith("- ") || trimmed.startsWith("• ")) {
+        return (
+          <div key={i} className="flex gap-1.5 ml-1">
+            <span className="text-indigo-400 mt-0.5">•</span>
+            <span>{rendered.map((r) => (typeof r === "string" ? r.replace(/^[-•]\s*/, "") : r))}</span>
+          </div>
+        );
+      }
+
+      return <p key={i}>{rendered}</p>;
+    });
+  }
+
   useEffect(() => {
     let cancelled = false;
     let pollTimer: ReturnType<typeof setTimeout> | null = null;
@@ -106,80 +138,103 @@ export default function ChartInsightPanel({ open, title, request, onClose }: Pro
         <div className="p-4 border-b border-gray-200 flex items-start justify-between gap-3">
           <div className="min-w-0">
             <div className="text-sm font-semibold text-gray-900 truncate">{header}</div>
-            {request?.timeRange ? (
+            {request?.timeRange && (
               <div className="text-xs text-gray-500 mt-0.5">
                 {request.timeRange.from} → {request.timeRange.to}
               </div>
-            ) : null}
+            )}
           </div>
           <button onClick={onClose} className="p-2 rounded-lg hover:bg-gray-100">
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="p-4 overflow-y-auto flex-1 space-y-4">
-          {loading ? (
+        <div className="p-4 overflow-y-auto flex-1 space-y-6">
+          {loading && (
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <RefreshCw className="w-4 h-4 animate-spin" />
-              {pollId ? "Đang phân tích — sẽ tự cập nhật khi xong..." : "Đang tạo insight..."}
+              Đang tạo insight...
             </div>
-          ) : null}
+          )}
 
-          {error ? (
+          {error && (
             <div className="p-3 rounded-lg border border-red-200 bg-red-50 text-sm text-red-700">{error}</div>
-          ) : null}
+          )}
 
-          {insight ? (
+          {insight && (
             <>
-              <div className="p-3 rounded-lg bg-indigo-50 border border-indigo-100 text-sm text-gray-800">
-                {insight.summary}
+              {/* Insight chính */}
+              <div className="p-4 rounded-xl bg-indigo-50 border border-indigo-100 text-gray-800">
+                <div className="space-y-2">{renderMarkdown(insight.summary)}</div>
               </div>
 
+              {/* What-if Widget - PHẦN MỚI ĐƯỢC THÊM */}
+              {insight.widgets && insight.widgets.length > 0 && (
+                <div>
+                  <div className="text-sm font-semibold text-gray-900 mb-3">What-if Analysis</div>
+                  {insight.widgets
+                    .filter((w: any) => w.widget_type === "what_if")
+                    .map((widget: any, i: number) => (
+                      <div key={i} className="p-4 rounded-xl border border-amber-200 bg-amber-50 mb-4">
+                        <div className="font-medium text-amber-700 mb-2">{widget.title}</div>
+                        <div className="text-sm text-gray-700 whitespace-pre-line">
+                          {widget.content_markdown}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              )}
+
+              {/* Highlights */}
               {insight.highlights?.length ? (
                 <div>
                   <div className="text-sm font-semibold text-gray-900 mb-2">Highlights</div>
                   <ul className="space-y-1 text-sm text-gray-700">
-                    {insight.highlights.map((h, i) => (
+                    {insight.highlights.map((h: string, i: number) => (
                       <li key={i} className="flex gap-2">
                         <span className="text-indigo-500 mt-0.5">•</span>
-                        <span>{h}</span>
+                        <span>{renderMarkdown(h)}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               ) : null}
 
+              {/* Explanations (detailed mode) */}
               {detailLevel === "detailed" && insight.explanations?.length ? (
                 <div>
                   <div className="text-sm font-semibold text-gray-900 mb-2">Explanation</div>
                   <div className="space-y-2 text-sm text-gray-700">
-                    {insight.explanations.map((e, i) => (
+                    {insight.explanations.map((e: any, i: number) => (
                       <div key={i} className="p-3 rounded-lg border border-gray-200">
-                        <div>{e.text}</div>
-                        {e.metric_reference ? (
+                        <div>{renderMarkdown(e.text)}</div>
+                        {e.metric_reference && (
                           <div className="text-xs text-gray-500 mt-1">{e.metric_reference}</div>
-                        ) : null}
+                        )}
                       </div>
                     ))}
                   </div>
                 </div>
               ) : null}
 
+              {/* Actions */}
               {insight.actions?.length ? (
                 <div>
                   <div className="text-sm font-semibold text-gray-900 mb-2">Suggested actions</div>
                   <ul className="space-y-1 text-sm text-gray-700">
-                    {insight.actions.map((a, i) => (
+                    {insight.actions.map((a: string, i: number) => (
                       <li key={i} className="flex gap-2">
                         <span className="text-emerald-600 mt-0.5">•</span>
-                        <span>{a}</span>
+                        <span>{renderMarkdown(a)}</span>
+                        <span>{renderMarkdown(a)}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               ) : null}
 
-              <div className="pt-2 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">
+              {/* Footer */}
+              <div className="pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">
                 <div>
                   confidence: <span className="font-medium text-gray-700">{Math.round(insight.confidence * 100)}%</span>
                   {" · "}
@@ -189,25 +244,25 @@ export default function ChartInsightPanel({ open, title, request, onClose }: Pro
                   <button
                     disabled={feedbackSent}
                     onClick={() => sendFeedback(true)}
-                    className="px-2.5 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-50 flex items-center gap-1.5"
+                    className="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-50 flex items-center gap-1.5 text-sm"
                     title="Useful"
                   >
-                    <ThumbsUp className="w-3.5 h-3.5" />
+                    <ThumbsUp className="w-4 h-4" />
                     Useful
                   </button>
                   <button
                     disabled={feedbackSent}
                     onClick={() => sendFeedback(false)}
-                    className="px-2.5 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-50 flex items-center gap-1.5"
+                    className="px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-50 flex items-center gap-1.5 text-sm"
                     title="Not useful"
                   >
-                    <ThumbsDown className="w-3.5 h-3.5" />
+                    <ThumbsDown className="w-4 h-4" />
                     Not useful
                   </button>
                 </div>
               </div>
             </>
-          ) : null}
+          )}
         </div>
       </div>
     </div>

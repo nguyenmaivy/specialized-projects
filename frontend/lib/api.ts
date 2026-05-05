@@ -168,6 +168,14 @@ export interface ChartInsightResponse {
     model_meta: { model_name: string; latency_ms: number };
     cached: boolean;
     status?: "succeeded" | "processing" | "failed";
+    
+    widgets?: Array<{
+    widget_type: string;
+    severity: string;
+    title: string;
+    content_markdown: string;
+    evidence_json?: any;
+  }>;
 }
 
 export const fetchFilters = async (): Promise<FilterOptions> => {
